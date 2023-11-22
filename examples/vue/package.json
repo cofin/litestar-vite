@@ -11,6 +11,6 @@
     "devDependencies": {
         "axios": "^1.1.2",
         "litestar-vite-plugin": "^0.1.0",
-        "vite": "^4.0.0" 
+        "vite": "^4.0.0"
     }
 }

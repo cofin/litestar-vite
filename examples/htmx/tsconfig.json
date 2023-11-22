@@ -24,8 +24,8 @@
     "**/*.d.ts",
     "resources/**/*.js" ,
     "resources/**/*.ts" ,
-    
-    
+
+
     "vite.config.ts"
   ]
 }
