@@ -4,9 +4,9 @@ import litestar from "litestar-vite-plugin";
 
 export default defineConfig({
   plugins: [
-    
+
     litestar({
-      input: [  
+      input: [
         "resources/styles.css"
       ],
       assetUrl: "/static/",
@@ -19,5 +19,5 @@ export default defineConfig({
     alias: {
       "@": "resources",
     },
-  }, 
+  },
 });
