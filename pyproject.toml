@@ -242,6 +242,7 @@ max-complexity = 12
   "TRY",
   "UP006",
   "SLF001",
+  "ERA001",
 ]
 
 [tool.ruff.lint.isort]

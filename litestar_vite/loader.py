@@ -193,7 +193,9 @@ class ViteAssetLoader:
 
     def _script_tag(self, src: str, attrs: dict[str, str] | None = None) -> str:
         """Generate an HTML script tag."""
-        attrs_str = " ".join([f'{key}="{value}"' for key, value in attrs.items()]) if attrs is not None else ""
+        if attrs is None:
+            attrs = {}
+        attrs_str = " ".join([f'{key}="{value}"' for key, value in attrs.items()])
         return f'<script {attrs_str} src="{src}"></script>'
 
     def _style_tag(self, href: str) -> str:
