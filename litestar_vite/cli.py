@@ -122,7 +122,7 @@ def vite_init(
         ctx.obj.app.debug = True
     env: LitestarEnv = ctx.obj
     plugin = env.app.plugins.get(VitePlugin)
-    config = plugin._config
+    config = plugin._config  # pyright: ignore[reportPrivateUsage]
 
     console.rule("[yellow]Initializing Vite[/]", align="left")
     resource_path = Path(resource_path or config.resource_dir)

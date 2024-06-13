@@ -21,10 +21,10 @@
     "types": ["vite/client"]
   },
   "include": [
-
     "**/*.d.ts",
-    "resources/**/*.js" ,
-    "resources/**/*.ts" ,
+    "resources/**/*.js",
+    "resources/**/*.ts",
+
     "vite.config.ts"
   ]
 }

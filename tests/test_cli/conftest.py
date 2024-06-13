@@ -10,7 +10,7 @@ import pytest
 from _pytest.fixtures import FixtureRequest
 from _pytest.monkeypatch import MonkeyPatch
 from click.testing import CliRunner
-from litestar.cli._utils import _path_to_dotted_path
+from litestar.cli._utils import _path_to_dotted_path  # pyright: ignore[reportPrivateUsage]
 from pytest_mock import MockerFixture
 
 from . import APP_BASIC_NO_ROUTES_FILE_CONTENT, APP_DEFAULT_CONFIG_FILE_CONTENT
@@ -140,7 +140,7 @@ def mock_confirm_ask(mocker: MockerFixture) -> Generator[MagicMock, None, None]:
         pytest.param((APP_BASIC_NO_ROUTES_FILE_CONTENT, "app"), id="app_obj"),
     ],
 )
-def _app_file_content(request: FixtureRequest) -> tuple[str, str]:
+def _app_file_content(request: FixtureRequest) -> tuple[str, str]:  # pyright: ignore[reportUnusedFunction]
     return cast("tuple[str, str]", request.param)
 
 

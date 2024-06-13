@@ -63,6 +63,7 @@ class ViteTemplateEngine(JinjaTemplateEngine):
         self,
         path: str | list[str],
         scripts_attrs: dict[str, str] | None = None,
+        **_: Any,
     ) -> markupsafe.Markup:
         """Generate all assets include tags for the file in argument.
 
@@ -76,6 +77,7 @@ class ViteTemplateEngine(JinjaTemplateEngine):
             context: The template context.
             path: Path to a Vite asset to include.
             scripts_attrs: script attributes
+            _: extra args to satisfy type checking
 
         Keyword Arguments:
             scripts_attrs {Optional[Dict[str, str]]}: Override attributes added to scripts tags. (default: {None})
@@ -84,3 +86,16 @@ class ViteTemplateEngine(JinjaTemplateEngine):
             str: All tags to import this asset in your HTML page.
         """
         return markupsafe.Markup(self.asset_loader.generate_asset_tags(path, scripts_attrs=scripts_attrs))
+
+    @classmethod
+    def from_environment(cls, config: ViteConfig, jinja_environment: Environment) -> ViteTemplateEngine:  # type: ignore[override]
+        """Create a JinjaTemplateEngine from an existing jinja Environment instance.
+
+        Args:
+            config: Vite config
+            jinja_environment (jinja2.environment.Environment): A jinja Environment instance.
+
+        Returns:
+            JinjaTemplateEngine instance
+        """
+        return cls(directory=None, config=config, engine_instance=jinja_environment)

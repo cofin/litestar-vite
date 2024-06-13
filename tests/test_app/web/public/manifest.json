@@ -1,0 +1,14 @@
+{
+  "resources/main.ts": {
+    "file": "assets/main-l0sNRNKZ.js",
+    "name": "main",
+    "src": "resources/main.ts",
+    "isEntry": true
+  },
+  "resources/styles.css": {
+    "file": "assets/styles-l0sNRNKZ.js",
+    "name": "styles",
+    "src": "resources/styles.css",
+    "isEntry": true
+  }
+}
